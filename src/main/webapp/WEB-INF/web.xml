@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>gasRegister</servlet-name>
+        <servlet-class>com.duckspot.gas.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>gasLogin</servlet-name>
+        <servlet-class>com.duckspot.gas.LoginServlet</servlet-class>
+    </servlet>
+<!--    <servlet>
+        <servlet-name>gasForgot</servlet-name>
+        <servlet-class>com.duckspot.gas.ForgotServlet</servlet-class>
+    </servlet>-->
+    <servlet>
+        <servlet-name>gasHome</servlet-name>
+        <servlet-class>com.duckspot.gas.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>gasHome</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>gasLogin</servlet-name>
+        <url-pattern>/gas/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>gasRegister</servlet-name>
+        <url-pattern>/gas/register</url-pattern>
+    </servlet-mapping>
+<!--    <servlet-mapping>
+        <servlet-name>gasForgot</servlet-name>
+        <url-pattern>/gas/forgot</url-pattern>
+    </servlet-mapping>-->
+</web-app>

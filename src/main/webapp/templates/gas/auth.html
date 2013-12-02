@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{{! gas: Google Application Server
+  ! duckspot.com
+  ! 
+  ! mvn/src/main/webapp/template/gas/auth.html
+  ! }}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>Signin for Duckspot Gas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/templates/gas/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
+<!DOCTYPE html>
+{{! gas: Google Application Server
+  ! duckspot.com
+  ! 
+  ! mvn/src/main/webapp/template/gas/auth.html
+  ! }}
+<html>    
+    <head>
+        <title>register : status</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <h1>gas</h1>
+        {{#if isLoggedIn }}
+            <h2>status</h2>        
+            logged in as {{ userName }}
+        {{/if}}
+        {{#unless isLoggedIn }}
+            <h2>login</h2>
+            {{ error }}
+            <form method="post">
+                <fieldset>
+                    <legend>login</legend>
+                    <div id="email">
+                        <label for="email">email:</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div id="password">
+                        <label for="password">password:</label>            
+                        <input type="password" name="password" />
+                    </div>
+                    <div id="buttons">
+                        <label for="action">&nbsp;</label>
+                        <input type="submit" name="action" value="login" />                        
+                    </div>
+                </fieldset>                   
+            </form>
+        {{/unless}}
+        {{#if salt}}
+            salt: {{ salt }}<br />
+        {{/if}}
+        {{#if token}}
+            token: {{ token }}<br />
+        {{/if}}        
+    </body>
+</html>

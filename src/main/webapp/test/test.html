@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test digest</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    </head>
+    <body>
+        <h1>test digest</h1>
+        <form method="post" action="/test/digest">
+            <div>
+                <label for="message">message:</label>
+                <input id="message" type="text" name="message">
+            </div>
+            <div>
+                <input id="testButton" type="submit" name="action" value="test">
+            </div>
+        </form>
+        <div>
+            jsDigest: <span id="jsDigest"></span>
+        </div>
+        <div>
+            javaDigest: <span id="javaDigest"></span>
+        </div>
+    </body>
+    <script src="../js/lib/jquery-1.10.2.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+    <script>
+        $(function () {
+            $("#testButton").click(function(event) {            
+                var message = $("#message").val();
+                event.preventDefault();
+                $("#jsDigest").html(CryptoJS.SHA256(message).toString());
+                $.ajax("/test/digest", {
+                    dataType: "json",
+                    data: { message: message },
+                    success: function(data, textStatus, jqXHR) {
+                        $("#javaDigest").html(data.digest);
+                    }
+                });
+            });            
+        });
+    </script>
+</html>

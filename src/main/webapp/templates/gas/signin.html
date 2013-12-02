@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{{! gas: Google Application Server
+  ! duckspot.com
+  ! 
+  ! mvn/src/main/webapp/template/gas/signin.html
+  ! }}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>Signin for Duckspot Gas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/templates/gas/signin.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" method="post">
+        <h1>Gas <small>from duckspot.com</small></h1>
+        {{#if error}}
+        <div class="alert alert-danger">{{error}}</div>        
+        {{/if}}
+        <input type="text" class="form-control" value="{{userEmail}}"
+               name="email" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" placeholder="Password"
+               name="password" required>
+        {{#if forgot}}
+        <div class="form-signin forgot"><a href="/forgot">forgot password</a></div>
+        {{/if}}
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> remember me          
+        </label>        
+        <button class="btn btn-lg btn-primary btn-block" type="submit"
+                name="action">sign 
+            in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" 
+                name="action" value="register">register</button>        
+      </form>
+
+    </div> <!-- /container -->
+  </body>
+</html>

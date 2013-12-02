@@ -1,0 +1,18 @@
+/* gas: Google Application Server
+ * duckspot.com
+ *
+ * mvn/src/main/webapp/template/gas/home.html
+ */
+
+body {
+}
+
+.container {
+    width: 350px;
+}
+#logo {
+    height: 60px;
+    width: 40px;
+    float: left;
+    margin: 0 5px 0 0;
+}

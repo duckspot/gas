@@ -1,0 +1,32 @@
+/* 
+    Document   : style
+    Created on : Nov 15, 2013, 11:44:10 AM
+    Author     : Peter Dobson
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+button, input, select, textarea {
+  margin: 0;
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For all Gecko based browsers */
+          box-sizing: border-box;          
+          float: right;
+}
+div {
+    width: 300px;
+}
+form {
+    width: 300px;    
+}
+label {
+    width: 100px;
+}
