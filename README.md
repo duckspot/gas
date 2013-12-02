@@ -1,7 +1,6 @@
-App Engine Java Application
-Copyright (C) 2010-2012 Google Inc.
+## Google App Starter application in Java.
 
-## Skeleton application for use with App Engine Java.
+Provides user registration, authentication, and email verification.
 
 Requires [Apache Maven](http://maven.apache.org) 3.0 or greater, and JDK 6+ in order to run.
 
